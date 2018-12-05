@@ -1,0 +1,1175 @@
+<!doctype html>
+<html><head>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js">
+	</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Date script-->
+	<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<meta charset="utf-8">
+	<!--Date script-->
+	
+	
+	<!--Date script-->
+	<script>
+	$(document).ready(function(){
+		var date_input=$('input[name="date"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'mm/dd/yyyy',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+	</script>
+	<!--Date script ends-->
+	<style>
+		.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}
+		
+		hr { 
+    display: block;
+    height: 1.5px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    background-color:black;
+} 
+		table.table-bordered{
+    border:1px solid #030303;
+    margin-top:20px;
+  }
+table.table-bordered > thead > tr > th{
+    border:1px solid #010101;
+}
+table.table-bordered > tbody > tr > td{
+    border:1px solid #010101;
+}
+	</style>
+	
+<title>Income Tax Return</title>
+</head>
+<?php include 'header.php'; ?>
+<body style="background-color: #9ED2E4">
+<div class="container">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+          <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+          <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+          <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+        </ul>
+        <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                  <h3>HOME</h3>
+                  <div class="container">
+                        <form id="itr" action="">        
+                        <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                          <thead >
+                            <tr  >
+                              <h2 style="color: #3762CB">Personal Information</h2>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td >PAN<span>*</span></td>
+                              <td><input type="text" name="PAN" placeholder="" class="form-control required"></td>
+                                <td >First Name<span>*</span></td>
+                              <td><input type="text" name="FirstName" placeholder="" class="form-control required"></td>
+                            </tr>
+                            <tr>
+                              <td >Middle Name<span>*</span></td>
+                              <td><input type="text" name="MidName" placeholder="" class="form-control required"></td>
+                                <td >Last Name<span>*</span></td>
+                              <td><input type="text" name="LastName" placeholder="" class="form-control required"></td>
+                            </tr>
+                           <tr>
+                              <td >Aadhaar Number(please enter <br>the aadhar number which is<br> linked with your PAN)<span>*</span></td>
+                              <td><input type="text" name="Adhaar" placeholder="" class="form-control required"></td>
+                                <td >Date of Birth<span>*</span></td>
+                              <td><div class="form-group bootstrap-iso form">
+                                                            <div class="input-group">
+                                                              <div class="input-group-addon">
+                                                                   <i class="fa fa-calendar">
+                                                                   </i>
+                                                                </div>
+                                                                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                                                             </div>
+                                                     </div></td>
+                            </tr>
+                              <tr>
+                              <td >Mobile Number<span>*</span></td>
+                              <td><input type="text" name="MidName" placeholder="" class="form-control required"></td>
+                                <td >Email Address<span>*</span></td>
+                              <td><input type="text" name="LastName" placeholder="" class="form-control required"></td>
+                            </tr>
+                          </tbody>
+                            </table>
+                            
+                            <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                             <thead>
+                            <tr>
+                              <h2 style="color: #3762CB">Address</h2>
+                            </tr>
+                          </thead>
+                            <tbody>
+                            <tr>
+                              <td >Flat/Block No                          <span>*</span></td>
+                              <td><input type="text" name="flat" placeholder="" class="form-control required"></td>
+                                <td >Area/Locality<span>*</span></td>
+                              <td><input type="text" name="Area" placeholder="" class="form-control required"></td>
+                            </tr>
+                            <tr>
+                              <td >Town/City/District<span>*</span></td>
+                              <td><input type="text" name="city" placeholder="" class="form-control required"></td>
+                                <td >State<span>*</span></td>
+                              <td><input type="text" name="State" placeholder="" class="form-control required"></td>
+                            </tr>
+                           <tr>
+                              <td >Pincode<span>*</span></td>
+                              <td><input type="text" name="Adhaar" placeholder="" class="form-control required"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                            <table class=" tab table table-bordered" style="background-color: #E6E6E6">
+                             <thead>
+                            <tr>
+                              <h2 style="color: #3762CB">Filing Status</h2>
+                            </tr>
+                          </thead>
+                            <tbody>
+                            <tr>
+                                <td >Employer category(if in employement)<span>*</span></td>
+                              <td> <select required>
+                                                          <option value="" disabled selected hidden>Please Select One...</option>
+                                                          <option value="0">Government</option>
+                                                          <option value="1">Public sector unit</option>
+                                                          <option value="2">Others</option>
+                                                          <option value="3">Not Applicable</option>
+                                  </select>
+                                  </td>
+                               </tr>
+                            <tr>
+                              <td >Return filed<span>*</span></td>
+                              <td><select required>
+                                                          <option value="" disabled selected hidden>Please Select One...</option>
+                                                          <option value="0">11-On or Before Due Date 139(1)</option>
+                                                          <option value="1">12-After Due Date 139(4)</option>
+                                                          <option value="2">13-u/s 142(1)</option>
+                                                          <option value="3">14-u/s 148</option>
+                                  <option value="4">15-u/s 153A</option>
+                                  <option value="5">16-u/s 153C r/w 153A</option>
+                                  <option value="6">17-Revised Return under section 139(5)</option>
+                                  <option value="7">18-u/s 139(9)</option>
+                                  <option value="8">20- Section 139(4) read with section 119(2)(b)</option>
+                                  </select></td>
+                            </tr>
+                           <tr><td >Whether original or revised return?<span>*</span></td>
+                           <td><select required>
+                                                          <option value="" disabled selected hidden>Please Select One...</option>
+                                                          <option value="0">Original</option>
+                                <option value="0">Revised</option>
+                               </select></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                            <hr>
+                            <h4 style="color: #3762CB"> If under section 139(5)-revised return:</h4>
+                            <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                    Original Acknowledgement Number
+                                    </td>
+                                     <td>
+                                        <input type="text" name="Adhaar" placeholder="" class="form-control required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    Date of filing of Original Return
+                                    </td>
+                                     <td>
+                                        <div class="form-group bootstrap-iso form">
+                                                            <div class="input-group">
+                                                              <div class="input-group-addon">
+                                                                   <i class="fa fa-calendar">
+                                                                   </i>
+                                                                </div>
+                                                                  <input class="form-control" id="date1" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                                                             </div>
+                                                     </div>
+                                    </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <hr>
+                            <h4 style="color: #3762CB"> If under section 139(9)-return in response to defective return notice:</h4>
+                            <table BORDERCOLOR="RED" class=" tab table table-bordered " style="background-color: #E6E6E6">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                    Original Acknowledgement Number
+                                    </td>
+                                     <td>
+                                        <input type="text" name="Adhaar" placeholder="" class="form-control required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    Date of filing of Original Return
+                                    </td>
+                                     <td>
+                                        <div class="form-group bootstrap-iso form">
+                                                            <div class="input-group">
+                                                              <div class="input-group-addon">
+                                                                   <i class="fa fa-calendar">
+                                                                   </i>
+                                                                </div>
+                                                                  <input class="form-control" id="date2" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                                                             </div>
+                                                     </div>
+                                    </td>
+                                </tr>
+                                     <tr>
+                                    <td>
+                                    Notice Number:
+                                    </td>
+                                     <td>
+                                        <input type="text" name="Adhaar" placeholder="" class="form-control required">
+                                    </td>
+                                </tr>
+                                     <tr>
+                                    <td>
+                                    If filed in response to notice u/s<br> 139(9)/142(1)/148/153A/153C,<br> enter the date <br>of such notice:
+                                    </td>
+                                     <td>
+                                    <div class="form-group bootstrap-iso form">
+                                                            <div class="input-group">
+                                                              <div class="input-group-addon">
+                                                                   <i class="fa fa-calendar">
+                                                                   </i>
+                                                                </div>
+                                                                  <input class="form-control" id="date3" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                                                             </div>
+                                                     </div>
+                                    </td>
+                                </tr>
+                                     <tr>
+                                    <td>
+                                    Are you governed by Potugese Civil <br>Code as per section 5A?
+                                    </td>
+                                     <td>
+                                    <select required>
+                                                          <option value="" disabled selected hidden>Please Select One...</option>
+                                                          <option value="0">Please Select One...</option><option value="1">Yes</option><option value="2">No</option>
+                                         </select>
+                                    </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                                
+                      </form>
+                </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                  <h3>Menu 1</h3>
+                  <form id="itr1" action="">        
+                        <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                          <thead >
+                            <tr  >
+                              <h2 style="color: #3762CB">PART B- GROSS TOTAL INCOME</h2>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td rowspan="6"><br><br><br><br><br>B1<br> Salary/Pension:</td>
+                              <td>(1) Salary (excluding all allowances, perquisites and profit in lieu of salary</td>
+                              <td><input type="text" name="sal" placeholder="" class="form-control "></td>
+                            </tr>
+                            <tr>
+                              <td >(2) Allowances not exempt</td>
+                              <td><input type="text" name="Allowance" placeholder="" class="form-control "></td>
+                            </tr>
+                           <tr>
+                              <td >(3)Value of perquisites</td>
+                              <td><input type="text" name="perquisites" placeholder="" class="form-control "></td>
+                               
+                            </tr>
+                              <tr>
+                              <td >(4) Profits in lieu of salary</td>
+                              <td><input type="text" name="MidName" placeholder="" class="form-control"></td>
+                            </tr>
+                              <tr>
+                              <td >(5)Deduction u/s 16</td>
+                              <td><input type="text" name="MidName" placeholder="" class="form-control"></td>
+                            </tr>
+                              <tr>
+                              <td >(6)Income chargable under the head 'Salaries':</td>
+                              <td><input type="text" name="MidName" placeholder="" class="form-control"></td>
+                            </tr>
+                              <tr>
+                              <td rowspan="7"><br><br><br><br><br>B2<br> House Property:</td>
+                              <td >Types of House Property:</td>
+                              <td><select>
+                                  <option value="" disabled selected hidden>Please Select One...</option>
+                                  <option value="0">Self Occupied</option>
+                                  <option value="1">Let Out</option>
+                                  </select></td>
+                              </tr>
+                                  <tr>
+                                <td>(1) Gross rent received/receivable/letable value</td>
+                              <td><input type="text" name="GrossRent" placeholder="" class="form-control "></td>
+                            </tr>
+                               <tr>
+                              <td >(2) Tax paid to local authorities</td>
+                              <td><input type="text" name="TaxPaidLocal" placeholder="" class="form-control "></td>
+                            </tr>
+                           <tr>
+                              <td >(3)Annual Value</td>
+                              <td><input type="text" name="annual" placeholder="" class="form-control "></td>
+                               
+                            </tr>
+                              <tr>
+                              <td >(4) 30% of Annual value</td>
+                              <td><input type="text" name="thirty" placeholder="" class="form-control"></td>
+                            </tr>
+                              <tr>
+                              <td >(5) Interest payable on bprrpwed capital</td>
+                              <td><input type="text" name="InterestBorrow" placeholder="" class="form-control"></td>
+                            </tr>
+                              <tr>
+                              <td >(6)Income chargable under the 'House Property'<br><p class="text-danger">Note: Maximum Loss from <br>House property that can be set-off is INR 2,00,000</p></td>
+                              <td><input type="text" name="House" placeholder="" class="form-control"></td>
+                            </tr>
+                              <tr>
+                                  <td>B3</td>
+                                  <td>Income from Other Sources</td>
+                                  <td><input type="text" name="inOther" placeholder="" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                  <td>B4</td>
+                                  <td>Gross Total Income</td>
+                                  <td><input type="text" name="inTTL" placeholder="" class="form-control"></td>
+                              </tr>
+                               </tbody>
+                            </table>
+                            
+                             <h2 style="color: #3762CB">PART C- Deductions and Taxable Total Income</h2>
+                          <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                              <tbody>
+                              <tr>
+                              <td>Section </td><td>Amount </td><td>System Calculated </td>			
+                              </tr>
+                                  <tr>
+                                      <td>80C-Life insurance premia,deferred annuity, contributions to provident fun,<br>
+                      subscription to certain equity dhares or debentures,etc.</td>
+                                      <td><input type="text" name="ded1" class="form-control"> </td>
+                                      <td><input type="text" name="ded111" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80CCC- Payment in respect Pension Fund</td>
+                                      <td><input type="text" name="ded2" class="form-control"> </td>
+                                      <td><input type="text" name="ded222" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80CCD(1)-Contribution to pension scheme of central government</td>
+                                      <td><input type="text" name="ded3" class="form-control"> </td>
+                                      <td><input type="text" name="ded333" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80CCD(1B)- Contribution to pension scheme of central government by employee</td>
+                                      <td><input type="text" name="ded4" class="form-control"> </td>
+                                      <td><input type="text" name="ded444" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80CCD(2)- Contribution to pension scheme of central government by employer</td>
+                                      <td><input type="text" name="ded5" class="form-control"> </td>
+                                      <td><input type="text" name="ded555" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80CCG- Investment made under an equity savings scheme</td>
+                                      <td><input type="text" name="ded6" class="form-control"> </td>
+                                      <td><input type="text" name="ded666" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80D -Health insurance premium</td>
+                                      <td><input type="text" name="ded7" class="form-control"> </td>
+                                      <td><input type="text" name="ded777" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80DD- Maintenance including medical treatment of a dependent who is a person<br>
+                      with disability</td>
+                                      <td><input type="text" name="ded8" class="form-control"> </td>
+                                      <td><input type="text" name="ded888" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80DDB- Medical treatment of specified disease</td>
+                                      <td><input type="text" name="ded9" class="form-control"> </td>
+                                      <td><input type="text" name="ded999" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80E- Interest on loan taken for higher education</td>
+                                      <td><input type="text" name="ded10" class="form-control"> </td>
+                                      <td><input type="text" name="ded101" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80EE- Interest on loan taken for residential house property</td>
+                                      <td><input type="text" name="ded11" class="form-control"> </td>
+                                      <td><input type="text" name="ded102" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80G- Donations to certain funds, charitable institutions,etc</td>
+                                      <td><input type="text" name="ded12" class="form-control"> </td>
+                                      <td><input type="text" name="ded113" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80GG- Rent Paid</td>
+                                      <td><input type="text" name="ded3" class="form-control"> </td>
+                                      <td><input type="text" name="ded114" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80GGA- Certain donations for scientific research or rural development</td>
+                                      <td><input type="text" name="ded14" class="form-control"> </td>
+                                      <td><input type="text" name="ded115" class="form-control" ></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80GGC- Donation to political party</td>
+                                      <td><input type="text" name="ded15" class="form-control"> </td>
+                                      <td><input type="text" name="ded116" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80RRB- Royalty on patents</td>
+                                      <td><input type="text" name="ded16" class="form-control"> </td>
+                                      <td><input type="text" name="ded117" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80QQB- Royalty income of authors of certaion books</td>
+                                      <td><input type="text" name="ded17" class="form-control"> </td>
+                                      <td><input type="text" name="ded118" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80TTA- Income from interest on saving bank accounts</td>
+                                      <td><input type="text" name="ded18" class="form-control"> </td>
+                                      <td><input type="text" name="ded119" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>80U- In case of a person with disability</td>
+                                      <td><input type="text" name="ded19" class="form-control"> </td>
+                                      <td><input type="text" name="ded120" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>C1- total Deductions</td>
+                                      <td><input type="text" name="ded20" class="form-control"> </td>
+                                      <td><input type="text" name="ded122" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>C2. Total Income(B4-C1)</td>
+                                      <td><input type="text" name="ded122" class="form-control"> </td>
+                                      <td><input type="text" name="ded123" class="form-control"></td>
+                                  </tr>
+                              </tbody>
+                              
+                          </table>
+                         
+                             <h2 style="color: #3762CB">Part D Computation of Tax Payable</h2>
+                          <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                              <tbody>
+                                  <tr>
+                                  
+                                      <td>D1. tax Payable on Total Income(C2)</td><td><input type="text" name="c1" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D2. Rebate u/s 87 A</td>
+                                      <td><input type="text" name="c2" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D3. Tax After rebate(D1-D2)</td>
+                                      <td><input type="text" name="c3" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D4. Cess on(D3)</td>
+                                      <td><input type="text" name="c4" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D5. Total Tax and Cess(D3+D4)</td>
+                                      <td><input type="text" name="c5" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D6. Relief u/s 89(1)</td>
+                                      <td><input type="text" name="c6" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>Balance Tax after relief(D5-D6)</td>
+                                      <td><input type="text" name="c7" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D7. Interest u/s 234A</td>
+                                      <td><input type="text" name="c8" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D8. Interest u/s 234B</td>
+                                      <td><input type="text" name="c9" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D9. Interest u/s 234C</td>
+                                      <td><input type="text" name="c10" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D10. Fee u/s 234F</td>
+                                      <td><input type="text" name="c11" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>total Interest and Fee payable(D7+D8+D9+D10)</td>
+                                      <td><input type="text" name="c12" class="form-control"></td>
+                                  </tr>
+                                  <tr>
+                                  <td>D11. Total Tax, Fee and Interest (D5+D7+D8+D9+D10+D6))</td>
+                                      <td><input type="text" name="c13" class="form-control"></td>
+                                  </tr>
+                      </tbody>
+                      </table>
+                                
+                      </form>
+                 </div>
+                <div id="menu2" class="tab-pane fade">
+                  <h3>Menu 2</h3>
+                  <div class="container">
+   
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                          <div class="col-md-8">
+                              
+                            <table id="productTable" 
+                                   class="table table-bordered table-condensed table-striped">
+                              <thead>
+                                  <tr colspan="6" ><h3 style="color: #3762CB">Details of TAX Deducted at source from Income[As per form 16]</h3></tr>
+                                <tr>
+                                  <th>Edit</th>
+                                  <th>TAX Deduction Account Number of Deductor</th>
+                                  <th>Name of Deductor</th>
+                                  <th>Income Chargeable Under Salaries</th>
+                                  <th>Total TAX Deducted</th>
+                                  <th>Delete</th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                          <div class="col-md-8">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">
+                                TAX Details
+                              </div>
+                              <div class="panel-body">
+                                <div class="form-group">
+                                  <label for="productname">
+                                    TAX Deduction Account Number of Deductor
+                                  </label>
+                                  <input type="text"
+                                         class="form-control"
+                                         id="productname" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="introdate">
+                                    Name of Deductor
+                                  </label>
+                                  <input type="text"
+                                         class="form-control"
+                                         id="introdate" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="text">
+                                    Income Chargeable Under Salaries
+                                  </label>
+                                  <input type="url"
+                                         class="form-control"
+                                         id="url" />
+                                </div>
+                                   <div class="form-group">
+                                  <label for="text">
+                                    Total TAX Deducted
+                                  </label>
+                                  <input type="text"
+                                         class="form-control"
+                                         id="ttl" />
+                                </div>
+                              </div>
+                              <div class="panel-footer">
+                                <div class="row">
+                                  <div class="col-xs-12">
+                                    <button type="button" id="updateButton"
+                                            class="btn btn-primary"
+                                            onclick="productUpdate();">
+                                      Add
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                      </div>
+                      <script>
+                        // Next id for adding a new Product
+                        var nextId = 1;
+                        // ID of Product currently editing
+                        var activeId = 0;
+                    
+                        function productDisplay(ctl) {
+                          var row = $(ctl).parents("tr");
+                          var cols = row.children("td");
+                    
+                          activeId = $($(cols[0]).children("button")[0]).data("id");
+                          $("#productname").val($(cols[1]).text());
+                          $("#introdate").val($(cols[2]).text());
+                          $("#url").val($(cols[3]).text());
+                          $("#ttl").val($(cols[3]).text());
+                    
+                          // Change Update Button Text
+                          $("#updateButton").text("Update");
+                        }
+                    
+                        function productUpdate() {
+                          if ($("#updateButton").text() == "Update") {
+                            productUpdateInTable(activeId);
+                          }
+                          else {
+                            productAddToTable();
+                          }
+                    
+                          // Clear form fields
+                          formClear();
+                    
+                          // Focus to product name field
+                          $("#productname").focus();
+                        }
+                    
+                        // Add product to <table>
+                        function productAddToTable() {
+                          // First check if a <tbody> tag exists, add one if not
+                          if ($("#productTable tbody").length == 0) {
+                            $("#productTable").append("<tbody></tbody>");
+                          }
+                    
+                          // Append product to table
+                          $("#productTable tbody").append(
+                            productBuildTableRow(nextId));
+                    
+                          // Increment next ID to use
+                          nextId += 1;
+                        }
+                    
+                        // Update product in <table>
+                        function productUpdateInTable(id) {
+                          // Find Product in <table>
+                          var row = $("#productTable button[data-id='" + id + "']")
+                                    .parents("tr")[0];
+                    
+                          // Add changed product to table
+                          $(row).after(productBuildTableRow(id));
+                          // Remove original product
+                          $(row).remove();
+                    
+                          // Clear form fields
+                          formClear();
+                    
+                          // Change Update Button Text
+                          $("#updateButton").text("Add");
+                        }
+                    
+                        // Build a <table> row of Product data
+                        function productBuildTableRow(id) {
+                          var ret =
+                          "<tr>" +
+                            "<td>" +
+                              "<button type='button' " +
+                                      "onclick='productDisplay(this);' " +
+                                      "class='btn btn-default' " +
+                                      "data-id='" + id + "'>" +
+                                      "<span class='glyphicon glyphicon-edit' />" +
+                              "</button>" +
+                            "</td>" +
+                            "<td>" + $("#productname").val() + "</td>" +
+                            "<td>" + $("#introdate").val() + "</td>" +
+                            "<td>" + $("#url").val() + "</td>" +
+                            "<td>" + $("#ttl").val() + "</td>" +
+                            "<td>" +
+                              "<button type='button' " +
+                                      "onclick='productDelete(this);' " +
+                                      "class='btn btn-default' " +
+                                      "data-id='" + id + "'>" +
+                                      "<span class='glyphicon glyphicon-remove' />" +
+                              "</button>" +
+                            "</td>" +
+                          "</tr>"
+                    
+                          return ret;
+                        }
+                    
+                        // Delete product from <table>
+                        function productDelete(ctl) {
+                          $(ctl).parents("tr").remove();
+                        }
+                    
+                        // Clear form fields
+                        function formClear() {
+                          $("#productname").val("");
+                          $("#introdate").val("");
+                          $("#url").val("");
+                          $("#ttl").val("");
+                        }
+                      </script>
+                      <div class="container">
+                       
+                          <div class="row">
+                          <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                            
+                              <table id="productTable2" 
+                                     class="table table-bordered table-condensed table-striped">
+                                <thead>
+                              <tr colspan="6" ><h3 style="color: #3762CB">Details of TAX Collected at Source(TCS)</h3></tr>
+                                  <tr>
+                                    <th>Edit</th>
+                                    <th>TAX Collection Account(TCN) Number of Collector</th>
+                                    <th>Name of Collector</th>
+                                    <th>Total TAX Deducted</th>
+                                    <th>Delete</th>
+                                  </tr>
+                                </thead>
+                              </table>
+                            </div>
+                          <div class="col-md-2"></div>
+                          </div>
+                      
+                          <div class="row">
+                          <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                              <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                  TAX Details
+                                </div>
+                                <div class="panel-body">
+                                  <div class="form-group">
+                                    <label for="productname2">
+                                        TAX Collection Account(TCN) Number of Collector
+                                    </label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="productname2" />
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="introdate2">
+                                        Name of Collector
+                                    </label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="introdate2" />
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="text2">
+                                        Total TAX Deducted
+                                    </label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="url2" />
+                                  </div>
+                                </div>
+                                <div class="panel-footer">
+                                  <div class="row">
+                                    <div class="col-xs-12">
+                                      <button type="button" id="updateButton2"
+                                              class="btn btn-primary"
+                                              onclick="productUpdate2();">
+                                        Add
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          <div class="col-md-2"></div>
+                          </div>
+                        </div>
+                        <script>
+                            // Next id for adding a new Product
+                            var nextId2 = 1;
+                            // ID of Product currently editing
+                            var activeId2 = 0;
+                        
+                            function productDisplay2(ctl) {
+                              var row = $(ctl).parents("tr");
+                              var cols = row.children("td");
+                        
+                              activeId2 = $($(cols[0]).children("button")[0]).data("id");
+                              $("#productname2").val($(cols[1]).text());
+                              $("#introdate2").val($(cols[2]).text());
+                              $("#url2").val($(cols[3]).text());
+                        
+                              // Change Update Button Text
+                              $("#updateButton2").text("Update");
+                            }
+                        
+                            function productUpdate2() {
+                              if ($("#updateButton2").text() == "Update") {
+                                productUpdateInTable2(activeId2);
+                              }
+                              else {
+                                productAddToTable2();
+                              }
+                        
+                              // Clear form fields
+                              formClear2();
+                        
+                              // Focus to product name field
+                              $("#productname2").focus();
+                            }
+                        
+                            // Add product to <table>
+                            function productAddToTable2() {
+                              // First check if a <tbody> tag exists, add one if not
+                              if ($("#productTable2 tbody").length == 0) {
+                                $("#productTable2").append("<tbody></tbody>");
+                              }
+                        
+                              // Append product to table
+                              $("#productTable2 tbody").append(
+                                productBuildTableRow2(nextId2));
+                        
+                              // Increment next ID to use
+                              nextId2 += 1;
+                            }
+                        
+                            // Update product in <table>
+                            function productUpdateInTable2(id) {
+                              // Find Product in <table>
+                              var row = $("#productTable2 button[data-id='" + id + "']")
+                                        .parents("tr")[0];
+                        
+                              // Add changed product to table
+                              $(row).after(productBuildTableRow2(id));
+                              // Remove original product
+                              $(row).remove();
+                        
+                              // Clear form fields
+                              formClear2();
+                        
+                              // Change Update Button Text
+                              $("#updateButton2").text("Add");
+                            }
+                        
+                            // Build a <table> row of Product data
+                            function productBuildTableRow2(id) {
+                              var ret =
+                              "<tr>" +
+                                "<td>" +
+                                  "<button type='button' " +
+                                          "onclick='productDisplay2(this);' " +
+                                          "class='btn btn-default' " +
+                                          "data-id='" + id + "'>" +
+                                          "<span class='glyphicon glyphicon-edit' />" +
+                                  "</button>" +
+                                "</td>" +
+                                "<td>" + $("#productname2").val() + "</td>" +
+                                "<td>" + $("#introdate2").val() + "</td>" +
+                                "<td>" + $("#url2").val() + "</td>" +
+                                "<td>" +
+                                  "<button type='button' " +
+                                          "onclick='productDelete2(this);' " +
+                                          "class='btn btn-default' " +
+                                          "data-id='" + id + "'>" +
+                                          "<span class='glyphicon glyphicon-remove' />" +
+                                  "</button>" +
+                                "</td>" +
+                              "</tr>"
+                        
+                              return ret;
+                            }
+                        
+                            // Delete product from <table>
+                            function productDelete2(ctl) {
+                              $(ctl).parents("tr").remove();
+                            }
+                        
+                            // Clear form fields
+                            function formClear2() {
+                              $("#productname2").val("");
+                              $("#introdate2").val("");
+                              $("#url2").val("");
+                            
+                            }
+                          </script>
+                          <div class="container">
+                       
+                              <div class="row">
+                              <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                
+                                  <table id="productTable3" 
+                                         class="table table-bordered table-condensed table-striped">
+                                    <thead>
+                                  <tr colspan="6" ><h3 style="color: #3762CB">Details of Advance Tax and Self Assesment Tax</h3></tr>
+                                      <tr>
+                                        <th>Edit</th>
+                                        <th>BSR Code</th>
+                                        <th>Serial No. of challan</th>
+                                        <th>TAX Paid</th>
+                                        <th>Delete</th>
+                                      </tr>
+                                    </thead>
+                                  </table>
+                                </div>
+                              <div class="col-md-2"></div>
+                              </div>
+                          
+                              <div class="row">
+                              <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                  <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                      TAX Details
+                                    </div>
+                                    <div class="panel-body">
+                                      <div class="form-group">
+                                        <label for="productname3">
+                                            BSR Code
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="productname3" />
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="introdate3">
+                                            Serial No. of challan
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="introdate3" />
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="text3">
+                                            TAX Paid
+                                        </label>
+                                        <input type="number"
+                                               class="form-control"
+                                               id="url3" />
+                                      </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                      <div class="row">
+                                        <div class="col-xs-12">
+                                          <button type="button" id="updateButton2"
+                                                  class="btn btn-primary"
+                                                  onclick="productUpdate3();">
+                                            Add
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <div class="col-md-2"></div>
+                              </div>
+                            </div>
+                            <script>
+                                // Next id for adding a new Product
+                                var nextId3 = 1;
+                                // ID of Product currently editing
+                                var activeId3 = 0;
+                            
+                                function productDisplay3(ctl) {
+                                  var row = $(ctl).parents("tr");
+                                  var cols = row.children("td");
+                            
+                                  activeId3 = $($(cols[0]).children("button")[0]).data("id");
+                                  $("#productname3").val($(cols[1]).text());
+                                  $("#introdate3").val($(cols[2]).text());
+                                  $("#url3").val($(cols[3]).text());
+                            
+                                  // Change Update Button Text
+                                  $("#updateButton3").text("Update");
+                                }
+                            
+                                function productUpdate3() {
+                                  if ($("#updateButton3").text() == "Update") {
+                                    productUpdateInTable3(activeId3);
+                                  }
+                                  else {
+                                    productAddToTable3();
+                                  }
+                            
+                                  // Clear form fields
+                                  formClear3();
+                            
+                                  // Focus to product name field
+                                  $("#productname3").focus();
+                                }
+                            
+                                // Add product to <table>
+                                function productAddToTable3() {
+                                  // First check if a <tbody> tag exists, add one if not
+                                  if ($("#productTable3 tbody").length == 0) {
+                                    $("#productTable3").append("<tbody></tbody>");
+                                  }
+                            
+                                  // Append product to table
+                                  $("#productTable3 tbody").append(
+                                    productBuildTableRow3(nextId3));
+                            
+                                  // Increment next ID to use
+                                  nextId3 += 1;
+                                }
+                            
+                                // Update product in <table>
+                                function productUpdateInTable3(id) {
+                                  // Find Product in <table>
+                                  var row = $("#productTable3 button[data-id='" + id + "']")
+                                            .parents("tr")[0];
+                            
+                                  // Add changed product to table
+                                  $(row).after(productBuildTableRow3(id));
+                                  // Remove original product
+                                  $(row).remove();
+                            
+                                  // Clear form fields
+                                  formClear3();
+                            
+                                  // Change Update Button Text
+                                  $("#updateButton3").text("Add");
+                                }
+                            
+                                // Build a <table> row of Product data
+                                function productBuildTableRow3(id) {
+                                  var ret =
+                                  "<tr>" +
+                                    "<td>" +
+                                      "<button type='button' " +
+                                              "onclick='productDisplay3(this);' " +
+                                              "class='btn btn-default' " +
+                                              "data-id='" + id + "'>" +
+                                              "<span class='glyphicon glyphicon-edit' />" +
+                                      "</button>" +
+                                    "</td>" +
+                                    "<td>" + $("#productname3").val() + "</td>" +
+                                    "<td>" + $("#introdate3").val() + "</td>" +
+                                    "<td>" + $("#url3").val() + "</td>" +
+                                    "<td>" +
+                                      "<button type='button' " +
+                                              "onclick='productDelete2(this);' " +
+                                              "class='btn btn-default' " +
+                                              "data-id='" + id + "'>" +
+                                              "<span class='glyphicon glyphicon-remove' />" +
+                                      "</button>" +
+                                    "</td>" +
+                                  "</tr>"
+                            
+                                  return ret;
+                                }
+                            
+                                // Delete product from <table>
+                                function productDelete3(ctl) {
+                                  $(ctl).parents("tr").remove();
+                                }
+                            
+                                // Clear form fields
+                                function formClear3() {
+                                  $("#productname3").val("");
+                                  $("#introdate3").val("");
+                                  $("#url3").val("");
+                                
+                                }
+                              </script>
+                  </div>
+                <div id="menu3" class="tab-pane fade">
+                  <h3>Menu 3</h3>
+                  <div class="container">
+                        <form id="itr" action="">        
+                        <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                          <thead >
+                            <tr  >
+                              <h2 style="color: #3762CB">Total Taxes Paid</h2>
+                            </tr>
+                        </thead>
+                        <tr>
+                                <td >D12(a)</td>
+                                <td >Total Advance TAX Paid</td>
+                                <td><input type="text" name="tat" placeholder="" class="form-control required"></td>
+                                
+                        </tr>
+                        <tr>
+                                <td >D12(b)</td>
+                                <td >Total TDS Claimed</td>
+                                <td><input type="text" name="tds" placeholder="" class="form-control required"></td>
+                                
+                        </tr>
+                        <tr>
+                                <td >D12(c)</td>
+                                <td >Total TCS Claimed</td>
+                                <td><input type="text" name="tcs" placeholder="" class="form-control required"></td>
+                                
+                        </tr>
+                        <tr>
+                                <td >D12(d)</td>
+                                <td >Total TAX Paid</td>
+                                <td><input type="text" name="tat" placeholder="" class="form-control required"></td>
+                                
+                        </tr>
+                        <tr>
+                                <td >D13</td>
+                                <td >Amount Payable  </td>
+                                <td><input type="text" name="tat" placeholder="" class="form-control required"></td>
+                                
+                        </tr>
+                        <tr>
+                                <td >D14</td>
+                                <td >Refund </td>
+                                <td><input type="text" name="tat" placeholder="" class="form-control required"></td>
+                                
+                        </tr>
+                        </table>
+                        <table class=" tab table table-bordered " style="background-color: #E6E6E6">
+                                <thead >
+                                        <tr  >
+                                          <h2 style="color: #3762CB">Verification</h2>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                I <input type="text" name="tat" placeholder="" > son/daughter of <input type="text" name="tat" placeholder="" > solemnly declare that to the best of my knowledge and belief,the information given in the return is correct and complete and is in accordance with the provision of the Income-tax Act 1961.
+                                                I further declare that I am making this return in my capacity as <input type="text" name="tat" placeholder=""> and I am also cometent to make this return and verify it.<br>
+                                                I am holding permanent account number <input type="text" name="tat" placeholder=""><br>
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>
+                                                   Place <input type="text" name="tat" placeholder="" >   Date 
+                                                   <input  id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                                                        
+                                                 </div>
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                        </table>
+                        </form>
+                </div>
+                 </div>
+              </div>
+</div>
+<?php include 'Footer.php'?>
+</body>  
+</html>  
